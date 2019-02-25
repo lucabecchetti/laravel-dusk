@@ -72,7 +72,7 @@ RUN apk add --no-cache chromium chromium-chromedriver
 RUN chromedriver &
 
 WORKDIR /var/www
-CMD php ./artisan serve --port=80 --host=0.0.0.0
+CMD php ./artisan serve --port=80 --host=0.0.0.0 --env=dusk.local
 EXPOSE 80
 EXPOSE 9515
 HEALTHCHECK --interval=1m CMD curl -f http://localhost/ || exit 1

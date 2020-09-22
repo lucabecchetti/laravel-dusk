@@ -46,4 +46,8 @@ cd /tmp && php -r "readfile('https://getcomposer.org/installer');" | php && \
    mv composer.phar /usr/bin/composer && \
    chmod +x /usr/bin/composer
 
+RUN pecl install -o -f redis imagick \
+    && rm -rf /tmp/pear \
+    && docker-php-ext-enable redis imagick ldap
+
 apk del $TMP

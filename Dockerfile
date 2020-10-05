@@ -23,6 +23,7 @@ RUN apt-get update && \
   libcurl3-dev \
   libssl-dev \
   unzip \
+  diffpdf \
 && rm -r /var/lib/apt/lists/*
 
 RUN pecl install -o -f redis imagick && rm -rf /tmp/pear

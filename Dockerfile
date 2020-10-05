@@ -23,17 +23,8 @@ RUN apt-get update && \
   libcurl3-dev \
   libssl-dev \
   unzip \
-  make \
-  automake \
-  g++ \
-  libpoppler-glib-dev \
   poppler-utils \
-  libwxgtk3.0-dev \
-  git \
 && rm -r /var/lib/apt/lists/*
-
-RUN cd /tmp && git clone https://github.com/vslavik/diff-pdf.git
-RUN cd /tmp/diff-pdf && ./bootstrap && ./configure && make && make install
 
 RUN pecl install -o -f redis imagick && rm -rf /tmp/pear
 
